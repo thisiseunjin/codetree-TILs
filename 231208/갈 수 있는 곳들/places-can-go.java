@@ -43,12 +43,15 @@ public class Main {
     }
     
     static int bfs(int x, int y){
-        int count=1;
+        int count=0;
         Queue<int[]> q = new ArrayDeque<>();
         boolean[][] thisVisited = new boolean[N][N];
         
-        isVisited[x][y] = true; //방문 체크
         thisVisited[x][y] = true;
+        if(!isVisited[x][y]){
+            count++;
+            isVisited[x][y] = true;
+        }
         q.add(new int[]{x,y});
 
         while(!q.isEmpty()){
