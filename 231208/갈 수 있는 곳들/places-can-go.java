@@ -10,6 +10,7 @@ public class Main {
     static int[] dy = {0,-1,0,1};
     static int N;
     static boolean[][] isVisited;
+    static int count=0;
 
     public static void main(String[] args) throws IOException{
         // 여기에 코드를 작성해주세요.
@@ -33,17 +34,15 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-
-            result = Math.max(result, bfs(x-1,y-1));
+            bfs(x-1,y-1);
         }
 
-        System.out.println(result);
+        System.out.println(count);
 
         
     }
     
-    static int bfs(int x, int y){
-        int count=0;
+    static void bfs(int x, int y){
         Queue<int[]> q = new ArrayDeque<>();
         boolean[][] thisVisited = new boolean[N][N];
         
@@ -69,14 +68,13 @@ public class Main {
                 if(map[nextX][nextY]==1) continue;
                 thisVisited[nextX][nextY] = true;
                 if(!isVisited[nextX][nextY]){
-                    count+=1;
+                    count++;
                     isVisited[nextX][nextY]= true;
                 }
                 q.add(new int[]{nextX,nextY});
             }
         }
         
-        return count;
     }
 
     static boolean inRange(int x, int y){
