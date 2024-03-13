@@ -1,16 +1,13 @@
 n = int(input())
 
-answer = 0
+answer = 100001
 
-answer += n//5
-n = n % 5
-# answer += n//5
+for i in range(0, 100001) :
+    r = n - 5 * i
+    if r >= 0 and r % 2 == 0 :
+        answer = min(answer, i + r//2)
 
-answer += n//2
-n = n % 2
-
-
-if n == 0 :
+if answer != 100001 :
     print(answer)
 else :
     print("-1")
