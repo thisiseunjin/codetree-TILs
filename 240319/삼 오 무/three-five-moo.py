@@ -1,11 +1,13 @@
 # import math
+import sys
+
 n = int(input())
 
 # + 3 + 5 - 15
 
 left = 1
 right = 1000000000
-answer = float('inf')
+answer = sys.maxsize
 
 def get_count(t) :
     count = 0
