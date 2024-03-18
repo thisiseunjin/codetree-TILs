@@ -9,11 +9,11 @@ for _ in range(n) :
 
 seq.sort()
 answer = 0
-left = 0
-right = 100001
+left = 1
+right = 100000
 
 def ispossible(value) :
-    if value == 0 : return False
+    # if value == 0 : return False
     global m
     count = 0
     # 각 숫자를 // 2해서 더한 것이 m 이상이면 됨
