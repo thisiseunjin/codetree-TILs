@@ -13,6 +13,7 @@ left = 0
 right = 100001
 
 def ispossible(value) :
+    if value == 0 : return False
     global m
     count = 0
     # 각 숫자를 // 2해서 더한 것이 m 이상이면 됨
