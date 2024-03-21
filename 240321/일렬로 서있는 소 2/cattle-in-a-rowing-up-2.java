@@ -14,11 +14,11 @@ public class Main {
         N = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine());
         height = new int[N+1];
-        for(int i=1;i<N;i++){
+        for(int i=0;i<N;i++){
             height[i] = Integer.parseInt(st.nextToken());
         }
 
-        combination(1, 0);
+        combination(0, 0);
         System.out.println(result);
     }
 
@@ -30,7 +30,7 @@ public class Main {
             return;
         }
 
-        for(int i=start;i<N+1;i++){
+        for(int i=start;i<N;i++){
             selected[cnt] = height[i];
             combination(i+1, cnt+1);
         }
