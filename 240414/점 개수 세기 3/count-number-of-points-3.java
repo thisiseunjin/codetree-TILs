@@ -5,6 +5,7 @@ public class Main {
     static int n;
     static int q;
     static int[] nums;
+    static StringBuilder sb = new StringBuilder();
     
     public static void main(String[] args) throws IOException{
         // 여기에 코드를 작성해주세요.
@@ -30,12 +31,15 @@ public class Main {
             int end = Integer.parseInt(st.nextToken());
 
             for(int j=0;j<n;j++){
-                if(start<=nums[j] && end>=nums[j]) result++;
+                if(nums[j]<start) continue;
                 if(nums[j]>end) break;
+                result++;
             }
 
-            System.out.println(result);
+            sb.append(result+"\n");
         }
+
+        System.out.println(sb);
 
     }
 }
