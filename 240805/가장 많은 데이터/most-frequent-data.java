@@ -12,12 +12,14 @@ public class Main {
 
         for(int i=0;i<N;i++){
             String str = br.readLine();
-            map.put(str, map.getOrDefault(map.get(str), 0)+1);
+            map.put(str, map.getOrDefault(str, 0)+1);
+            // System.out.println(str+" : "+map.get(str));
         }
 
         int result=0;
         for(String key : map.keySet()){
-            result+=map.get(key);
+            // System.out.println(key+" : "+map.get(key));
+            result = Math.max(result, map.get(key));
         }
 
         System.out.println(result);
