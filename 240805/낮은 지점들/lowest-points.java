@@ -17,12 +17,7 @@ public class Main {
             int key = Integer.parseInt(st.nextToken());
             int value = Integer.parseInt(st.nextToken());
 
-            if(!map.containsKey(key)){
-                map.put(key, value);
-                continue;
-            }
-
-            map.put(key, Math.min(map.get(key), value));
+            map.put(key, map.get(key)==null? value:Math.min(map.get(key), value));
         }
 
         int result=0;
