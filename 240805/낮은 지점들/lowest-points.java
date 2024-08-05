@@ -20,7 +20,7 @@ public class Main {
             map.put(key, map.get(key)==null? value:Math.min(map.get(key), value));
         }
 
-        int result=0;
+        long result=0;
         for(int key : map.keySet()){
             result+=map.get(key);
         }
