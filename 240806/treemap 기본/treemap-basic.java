@@ -17,29 +17,50 @@ public class Main {
         for(int i=0;i<n;i++){
             st = new StringTokenizer(br.readLine());
 
-            string op = st.nextToken();
+            String op = st.nextToken();
+            int key =0;
+            int value =0;
             
             switch(op){
                 case "add":
-                    int key = Integer.parseInt(st.nextToken());
-                    int value = Integer.parseInt(st.nextToken);
+                    key = Integer.parseInt(st.nextToken());
+                    value = Integer.parseInt(st.nextToken());
 
                     map.put(key, value);
                     break;
                 case "remove":
-                    int key = Integer.parseInt(st.nextToken());
+                    key = Integer.parseInt(st.nextToken());
                     map.remove(key);
                     break;
 
                 case "find" : 
-                    int key = Integer.parseInt(st.nextToken());
-                    sb.append(map.getOrDefault(key, "Null"));
+                    key = Integer.parseInt(st.nextToken());
+                    sb.append(map.get(key)==null?"None" : map.get(key));
+                    sb.append("\n");
                     break;
                 case "print_list":
+                    if(map.isEmpty()){
+                        sb.append("None");
+                        continue;
+                    }
+
+                    else{
+                        for(int k : map.keySet()){
+                            sb.append(map.get(k));
+                            sb.append(" ");
+                        }
+                    }
+
+                    sb.append("\n");
+
+                    
+
 
                     break;
             }
         }
+
+        System.out.print(sb);
 
     }
 }
