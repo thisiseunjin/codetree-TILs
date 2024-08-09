@@ -5,7 +5,7 @@ import java.io.*;
 public class Main {
     static int N;
     static StringBuilder sb = new StringBuilder();
-    static PriorityQueue<Integer> pq = new PriorityQueue<>();
+    static PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
     public static void main(String[] args) throws IOException{
         // 여기에 코드를 작성해주세요.
 
